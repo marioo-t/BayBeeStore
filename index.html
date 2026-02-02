@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bay Bee Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Banner principal -->
+    <section class="hero">
+        <h1>Welcome to our store</h1>
+
+    </section>
+    <!-- Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bay Bee Store</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Style</a></li>
+                <li><a href="#">Coffee</a></li>
+                <li><a href="#">Wellness</a></li>
+                <li><a href="#">Extras</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="cart-icon">🛒</div>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Sección de Productos tipo presentación -->
+    <section class="slider">
+
+        <button class="flecha izquierda">&#10094;</button>
+
+        <div class="slide activo" style="background-image: url('images/style.jpg');">
+            <h2>STYLE</h2>
+        </div>
+
+        <div class="slide" style="background-image: url('images/wellness.jpg');">
+            <h2>WELLNESS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url('images/coffee.jpg');">
+            <h2>COFFEE</h2>
+        </div>
+
+        <div class="slide" style="background-image: url('images/extra.jpg');">
+            <h2>EXTRA</h2>
+        </div>
+
+        <button class="flecha derecha">&#10095;</button>
+
+    </section>
+
+
+    <!-- Sección de Productos Destacados -->
+    <section class="productosDestacados">
+        <h2>Productos destacados</h2>
+        <div class="grid-productos" id="productosDestacados">
+            <!-- Aquí se insertan productos con JS -->
+        </div>
+    </section>
+
+    <button onclick="verProductos()">Check Products</button>
+
+
+    <!-- Footer -->
+    <footer>
+        <h1>SUBSCRIBE TO OUR EMAILS</h1>
+        <p>Be the first to know about new collections and exclusive offers.</p>
+        <br>
+        <form id="subscribe-form">
+            <input type="email" placeholder="Email">
+            <button type="submit">--></button>
+        </form>
+        <br>
+        <p>© 2025 Bay Bee Store.</p>
+
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

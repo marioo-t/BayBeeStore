@@ -1,0 +1,194 @@
+﻿/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: #333;
+    color: #333;
+    text-align: center;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+    background: #ffd800;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+    .hero button {
+        background: #fff;
+        color: #0099ff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+/* ============================= */
+/* SLIDER CON IMAGENES */
+/* ============================= */
+
+.slider {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+    .slide.activo {
+        opacity: 1;
+    }
+
+    .slide h2 {
+        color: white;
+        font-size: 70px;
+        letter-spacing: 6px;
+        background: rgba(0,0,0,0.5);
+        padding: 15px 40px;
+        border-radius: 10px;
+    }
+
+/* Flechas */
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px 18px;
+    z-index: 10;
+}
+
+.izquierda {
+    left: 20px;
+}
+
+.derecha {
+    right: 20px;
+}
+
+.flecha:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* ========================= */
+/* SECCION PRODUCTOS */
+/* ========================= */
+
+.productos {
+    padding: 20px;
+    text-align: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+#productosDestacados {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* TARJETA PRODUCTO */
+.producto-card {
+    
+    width: 400px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* EFECTO TARJETA */
+    .producto-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    }
+
+/* CONTENEDOR IMAGEN */
+.producto-img {
+    width: 350px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    padding: 10px
+}
+
+    /* IMAGEN */
+    .producto-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+/* ZOOM INTERNO */
+.producto-card:hover .producto-img img {
+    transform: scale(1.15);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
