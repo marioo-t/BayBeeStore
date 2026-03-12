@@ -1,88 +1,348 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bay Bee Store</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bay Bee Store – Premium Lifestyle Essentials for modern living." />
+    <title>Bay Bee Store | Premium Lifestyle Essentials</title>
+
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandYellow: '#ffd800',
+                        brandDark: '#222',
+                        brandDeepDark: '#111',
+                        brandGrey: '#333',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ── Slider transitions ── */
+        .slide {
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .slide.activo {
+                opacity: 1;
+                z-index: 10;
+            }
+
+            .slide.inactivo {
+                opacity: 0;
+                z-index: 0;
+            }
+
+        /* ── Newsletter success message ── */
+        .mensaje-exito {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(10px);
+        }
+
+            .mensaje-exito.mostrar-exito {
+                opacity: 1 !important;
+                transform: translateY(0);
+            }
+
+        /* ── Custom scrollbar ── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #222;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffd800;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body>
 
-    <!-- Banner principal -->
-    <section class="hero">
-        <h1>Welcome to our store</h1>
+<body class="bg-brandGrey text-white font-sans overflow-x-hidden">
 
+    <!-- ══════════════════════════════════════════
+         ANNOUNCEMENT BANNER
+    ══════════════════════════════════════════ -->
+    <section class="bg-brandYellow text-brandDeepDark py-3 text-center font-bold tracking-widest uppercase text-sm">
+        Welcome to our store
     </section>
-    <!-- Navegación -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Bay Bee Store</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Style</a></li>
-                <li><a href="#">Coffee</a></li>
-                <li><a href="#">Wellness</a></li>
-                <li><a href="#">Extras</a></li>
-                <li><a href="#">About Us</a></li>
+
+    <!-- ══════════════════════════════════════════
+         HEADER & NAVIGATION
+    ══════════════════════════════════════════ -->
+    <header class="bg-brandDark sticky top-0 z-50 shadow-lg border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20" aria-label="Main navigation">
+            <a href="#" class="text-2xl font-extrabold tracking-tighter text-brandYellow" aria-label="Bay Bee Store home">
+                BAY BEE STORE
+            </a>
+
+            <ul class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider" role="list">
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Home</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Style</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Coffee</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Wellness</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Extras</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">About Us</a></li>
             </ul>
-            <div class="cart-icon">🛒</div>
+
+            <div class="flex items-center space-x-5">
+                <button class="text-xl hover:text-brandYellow transition-transform hover:scale-110" aria-label="Open cart">🛒</button>
+                <button class="md:hidden text-2xl" aria-label="Open mobile menu">☰</button>
+            </div>
         </nav>
     </header>
 
+    <!-- ══════════════════════════════════════════
+         CATEGORY SLIDER
+         ▸ Cambia cada URL dentro de url('...') por tu imagen
+    ══════════════════════════════════════════ -->
+    <section class="relative h-[600px] w-full overflow-hidden bg-black" id="categorySlider" aria-label="Category slideshow">
 
+        <!-- Prev / Next arrows -->
+        <button class="flecha izquierda absolute left-5 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-brandYellow hover:text-black w-12 h-12 rounded-full flex items-center justify-center transition-all" aria-label="Previous slide">❮</button>
+        <button class="flecha derecha  absolute right-5 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-brandYellow hover:text-black w-12 h-12 rounded-full flex items-center justify-center transition-all" aria-label="Next slide">❯</button>
 
-
-    <!-- Sección de Productos tipo presentación -->
-    <section class="slider">
-
-        <button class="flecha izquierda">&#10094;</button>
-
-        <div class="slide activo" style="background-image: url('images/style.jpg');">
-            <h2>STYLE</h2>
+        <!-- SLIDE 1 – STYLE -->
+        <!-- IMAGEN SLIDER 1: reemplaza la URL dentro de url('...') -->
+        <div class="slide activo absolute inset-0 flex items-center justify-center bg-cover bg-center"
+             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHo7a7Omx-Zuh5LEIjo3ih3b2cjLUThhADknj7iAYEUpjQolIauSBvwYj6ajmLNFCG6dxnyGC8PWaHJJwI8Gp2eBTFjtDMAwrfiGHHe67A_5sYWkUpxgJfg_7TAJkUkbY0lm9drri38YjhOZaR0gjJC9GQEixTvEcE_pfSu8PrVHW0DTO3EZpDb_KdHdTy3gdbn2nw8MBGga8iILajFkXCzqwGBrysfo_o0ISb6dvqZRgieF2EOKqslCQP80VWM8Qf8eOcpbMSfVnB');"
+             role="group" aria-label="Slide 1: Style">
+            <h2 class="text-6xl md:text-8xl font-black tracking-widest text-white drop-shadow-2xl">STYLE</h2>
         </div>
 
-        <div class="slide" style="background-image: url('images/wellness.jpg');">
-            <h2>WELLNESS</h2>
+        <!-- SLIDE 2 – WELLNESS -->
+        <!-- IMAGEN SLIDER 2: reemplaza la URL dentro de url('...') -->
+        <div class="slide inactivo absolute inset-0 flex items-center justify-center bg-cover bg-center"
+             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnUcRTz6F4OHp2rAF6C0UPr4pv6AasVVKhAj3vEPxlpGCZL21NaKA-aeNFv-Z8BKaNoyN3X_gzsnoXw1UBkXwtYeWu6zYrozfVx03hYPugAtYSXEjX2TsKcvcWZH7De3RUGTABrHkjjMrmCR4bm5GCyWIJuq-tdHnoj5zpZcKGAawNcqFtFpX1a-4aMi0oH_snbonUWCASiY5dCu7paVTdE_TIUMfR3vZ9gBPoJsDOg6MOBUCEEkwBndFVkKA7OKPV1sE3fQ2Z4EFo');"
+             role="group" aria-label="Slide 2: Wellness">
+            <h2 class="text-6xl md:text-8xl font-black tracking-widest text-white drop-shadow-2xl">WELLNESS</h2>
         </div>
 
-        <div class="slide" style="background-image: url('images/coffee.jpg');">
-            <h2>COFFEE</h2>
+        <!-- SLIDE 3 – COFFEE -->
+        <!-- IMAGEN SLIDER 3: reemplaza la URL dentro de url('...') -->
+        <div class="slide inactivo absolute inset-0 flex items-center justify-center bg-cover bg-center"
+             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrOreQP_01aRu8ST-Q6-T62DDOPZqRf292Yn9F5brRD1C8dojqLXUhbR-AdC88-JHKhcSNCzSiQQ35MZz23AwQ1tH9KyIOX-1qZ1JTLidAr_SAceM6p9ndDgaCfydp-YaSMpMUbeGGodhte-JzKuY4kiIeFTB8QHcOJp3S7l7qsPZu6w2cRbmmojY9EL-mAEqqQPiVuo6AuD7rGo-2-YiiPj43-mHKm8RcRIK9hHcyLj2hb7nBaEHWjXTTLO2XqXHjjs16bM0a2opN');"
+             role="group" aria-label="Slide 3: Coffee">
+            <h2 class="text-6xl md:text-8xl font-black tracking-widest text-white drop-shadow-2xl">COFFEE</h2>
         </div>
 
-        <div class="slide" style="background-image: url('images/extra.jpg');">
-            <h2>EXTRA</h2>
+        <!-- SLIDE 4 – EXTRA -->
+        <!-- IMAGEN SLIDER 4: reemplaza la URL dentro de url('...') -->
+        <div class="slide inactivo absolute inset-0 flex items-center justify-center bg-cover bg-center"
+             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2IMtViYsGvrb83BwY-f5_BP4cefNuzCodVCsmMgJB8AAMlQBzprxdqzvuWJtU6qYcsNb1A_ziRJQSuYq2yBPeQmkldG77uxyMA4tc8t3EodNNuyDJWs5I8MiNn7ACE2mI0qXFTPg7CkSTQ5Yk2X2Mxp2pKION9KeH4kY0H-fv1Jq6aDddl_Q63eDZPOzms7iGzg9T6ulK3apfjYXCmNZVquMACpbGorweCxPDv568lQPIUrNuMMiXZiDGdi0lQ2bilQW1L7cVUoHQ');"
+             role="group" aria-label="Slide 4: Extra">
+            <h2 class="text-6xl md:text-8xl font-black tracking-widest text-white drop-shadow-2xl">EXTRA</h2>
         </div>
+    </section>
 
-        <button class="flecha derecha">&#10095;</button>
+    <!-- ══════════════════════════════════════════
+         FEATURE SECTION
+    ══════════════════════════════════════════ -->
+    <section class="py-24 px-4 bg-brandDeepDark">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 
+            <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-2xl group">
+                <!-- IMAGEN FEATURE: reemplaza el src -->
+                <img src="images/feature.jpg"
+                     alt="Featured product – latest collection"
+                     loading="lazy"
+                     class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+
+            <div class="w-full lg:w-1/2 space-y-8">
+                <span class="text-brandYellow font-bold tracking-widest uppercase text-sm">Our Signature Choice</span>
+                <h2 class="text-5xl md:text-7xl font-extrabold leading-tight">Discover Our Latest Collection</h2>
+                <p class="text-xl text-gray-400 leading-relaxed max-w-xl">
+                    Elevate your daily rituals with premium quality essentials designed for a life well-lived. Sustainability meets modern aesthetics.
+                </p>
+                <button class="bg-brandYellow text-brandDeepDark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg">
+                    Check Product
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         FEATURED PRODUCTS GRID
+         ▸ Edita el array productosList en el JS de abajo
+    ══════════════════════════════════════════ -->
+    <section class="py-24 px-4 bg-brandGrey">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-16 tracking-tight">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10" id="productosDestacados" aria-label="Featured products">
+                <!-- Injected by JS -->
+            </div>
+        </div>
     </section>
 
 
-    <!-- Sección de Productos Destacados -->
-    <section class="productosDestacados">
-        <h2>Productos destacados</h2>
-        <div class="grid-productos" id="productosDestacados">
-            <!-- Aquí se insertan productos con JS -->
+    <!-- ══════════════════════════════════════════
+         FOOTER + NEWSLETTER
+    ══════════════════════════════════════════ -->
+    <footer class="bg-brandDeepDark pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Newsletter -->
+            <div class="max-w-2xl mx-auto text-center mb-24">
+                <h2 class="text-4xl font-extrabold mb-6">Join Our Community</h2>
+                <p class="text-gray-400 mb-10 text-lg">Subscribe to receive updates, access to exclusive deals, and curated lifestyle tips.</p>
+
+                <form id="newsletterForm" novalidate class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <input id="emailInput"
+                           type="email"
+                           placeholder="Enter your email"
+                           required
+                           autocomplete="email"
+                           class="w-full sm:w-80 px-6 py-4 rounded-full bg-brandDark border-brandGrey focus:border-brandYellow focus:ring-brandYellow text-white outline-none" />
+                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-brandYellow text-brandDeepDark font-bold rounded-full hover:bg-white transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+
+                <p id="mensajeExito" class="mensaje-exito text-brandYellow font-bold mt-6 opacity-0" aria-live="polite"></p>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 text-gray-500 text-sm">
+                <p>© 2025 Bay Bee Store. All rights reserved.</p>
+                <nav class="mt-4 md:mt-0 flex space-x-8" aria-label="Legal links">
+                    <a class="hover:text-brandYellow transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-brandYellow transition-colors" href="#">Terms of Service</a>
+                    <a class="hover:text-brandYellow transition-colors" href="#">Cookies</a>
+                </nav>
+            </div>
         </div>
-    </section>
-
-    <button onclick="verProductos()">Check Products</button>
-
-
-    <!-- Footer -->
-    <footer>
-        <h1>SUBSCRIBE TO OUR EMAILS</h1>
-        <p>Be the first to know about new collections and exclusive offers.</p>
-        <br>
-        <form id="subscribe-form">
-            <input type="email" placeholder="Email">
-            <button type="submit">--></button>
-        </form>
-        <br>
-        <p>© 2025 Bay Bee Store.</p>
-
     </footer>
 
-    <script src="main.js"></script>
+    <!-- ══════════════════════════════════════════
+         JAVASCRIPT
+    ══════════════════════════════════════════ -->
+    <!-- Slider logic (with hover-pause) -->
+    <script>
+        (function () {
+            const slides = document.querySelectorAll('.slide');
+            const slider = document.getElementById('categorySlider');
+            let current = 0;
+            let autoplayId = null;
+
+            function goTo(n) {
+                slides[current].classList.replace('activo', 'inactivo');
+                current = (n + slides.length) % slides.length;
+                slides[current].classList.replace('inactivo', 'activo');
+            }
+
+            function startAutoplay() {
+                autoplayId = setInterval(() => goTo(current + 1), 6000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayId);
+            }
+
+            document.querySelector('.derecha').addEventListener('click', () => goTo(current + 1));
+            document.querySelector('.izquierda').addEventListener('click', () => goTo(current - 1));
+
+            // Pause autoplay while user hovers the slider
+            slider.addEventListener('mouseenter', stopAutoplay);
+            slider.addEventListener('mouseleave', startAutoplay);
+
+            startAutoplay();
+        })();
+    </script>
+
+    <!-- ══════════════════════════════════════════
+         PRODUCTS – EDIT YOUR IMAGES & INFO HERE
+    ══════════════════════════════════════════ -->
+    <script>
+        const productosList = [
+            {
+                nombre: "Classic Hoodie",
+                precio: "$19.99",
+                // IMAGEN PRODUCTO 1: reemplaza este src
+                imagen: "images/hoddie.jpg"
+            },
+            {
+                nombre: "Heritage Cap",
+                precio: "$14.99",
+                // IMAGEN PRODUCTO 2: reemplaza este src
+                imagen: "images/gorra.jpg"
+            },
+            {
+                nombre: "Coffee Maker v60",
+                precio: "$44.99",
+                // IMAGEN PRODUCTO 3: reemplaza este src
+                imagen: "images/homero.jpg"
+            },
+            {
+                nombre: "Premium Sneakers",
+                precio: "$14.99",
+                // IMAGEN PRODUCTO 4: reemplaza este src
+                imagen: "images/sneakers.jpg"
+            }
+        ];
+
+        function renderProductos() {
+            const contenedor = document.getElementById('productosDestacados');
+
+            productosList.forEach(prod => {
+                const card = document.createElement('article');
+                card.className = 'bg-brandDark rounded-3xl p-4 group cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-2';
+                card.innerHTML = `
+                            <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-6">
+                                <img
+                                    src="${prod.imagen}"
+                                    alt="${prod.nombre}"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div class="absolute inset-0 bg-brandYellow/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2 group-hover:text-brandYellow transition-colors">${prod.nombre}</h4>
+                            <p class="text-gray-400 font-semibold">${prod.precio}</p>
+                        `;
+                contenedor.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderProductos);
+    </script>
+
+    <!-- Newsletter form -->
+    <script>
+        (function () {
+            const form = document.getElementById('newsletterForm');
+            const mensaje = document.getElementById('mensajeExito');
+            const input = document.getElementById('emailInput');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!input.validity.valid) return;
+
+                mensaje.textContent = '✔ Thank you for subscribing!';
+                mensaje.classList.add('mostrar-exito');
+                input.value = '';
+
+                setTimeout(() => mensaje.classList.remove('mostrar-exito'), 4000);
+            });
+        })();
+    </script>
+
 </body>
 </html>
