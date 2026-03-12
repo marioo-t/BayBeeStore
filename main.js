@@ -25,7 +25,7 @@ document.querySelector(".izquierda").addEventListener("click", () => {
     mostrarSlide(actual);
 });
 
-// Autom�tico
+// Automático
 setInterval(() => {
     actual++;
     if (actual >= slides.length) actual = 0;
@@ -33,7 +33,7 @@ setInterval(() => {
 }, 5000);
 
 
-// Datos de ejemplo (simulando lo que ver�as en el HTML)
+// Datos de ejemplo (simulando lo que verías en el HTML)
 const productosList = [
     { nombre: "Producto 1", precio: "$19.99", imagen: "images/hoddie.jpg" },
     { nombre: "Producto 2", precio: "$14.99", imagen: "images/gorra.jpg" },
@@ -60,3 +60,26 @@ function verProductos() {
 
 document.addEventListener("DOMContentLoaded", verProductos);
 
+// ======================
+// MENSAJE SUSCRIPCIÓN
+// ======================
+
+const form = document.getElementById("newsletterForm");
+const mensaje = document.getElementById("mensajeExito");
+const inputEmail = document.getElementById("emailInput");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault(); // evita que recargue la página
+
+    mensaje.textContent = "Thank you for subscribing!";
+    mensaje.classList.add("mostrar-exito");
+    mensaje.style.opacity = "1";
+
+    inputEmail.value = "";
+
+    // Ocultar mensaje después de 4 segundos
+    setTimeout(() => {
+        mensaje.style.opacity = "0";
+        mensaje.classList.remove("mostrar-exito");
+    }, 4000);
+});
