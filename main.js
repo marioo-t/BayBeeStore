@@ -83,3 +83,23 @@ form.addEventListener("submit", function (e) {
         mensaje.classList.remove("mostrar-exito");
     }, 4000);
 });
+
+// Métodos de pago en el footer
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('footer').forEach(footer => {
+        footer.insertAdjacentHTML('beforeend', `
+            <div class="flex flex-wrap justify-center gap-3 mt-8 pt-8 border-t border-white/10 max-w-7xl mx-auto px-4">
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/visa.svg"        alt="Visa"             class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/mastercard.svg"   alt="Mastercard"       class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/amex.svg"         alt="American Express" class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/paypal.svg"       alt="PayPal"           class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/apple-pay.svg"    alt="Apple Pay"        class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/google-pay.svg"   alt="Google Pay"       class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/discover.svg"     alt="Discover"         class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/diners.svg"       alt="Diners Club"      class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/shopify.svg"      alt="Shop Pay"         class="h-8 rounded" />
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@1.1.0/min/flat/venmo.svg"        alt="Venmo"            class="h-8 rounded" />
+            </div>
+        `);
+    });
+});
