@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Bay Bee Store</title>
+
+    <!-- 1. Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- 2. Configuración de colores personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandYellow: '#ffd800',
+                        brandDark: '#222',
+                        brandDeepDark: '#111',
+                        brandGrey: '#333',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-brandGrey text-white font-sans overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- ══ HEADER ══ -->
+    <header class="bg-brandDark sticky top-0 z-50 shadow-lg border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20" aria-label="Main navigation">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-brandYellow">
+                BAY BEE STORE
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider" role="list">
+                <li><a class="hover:text-brandYellow transition-colors" href="index.html">Home</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Style</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Coffee</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Wellness</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Extras</a></li>
+                <li><a class="text-brandYellow" href="about-us.html">About Us</a></li>
+            </ul>
+            <div class="flex items-center space-x-5">
+                <button class="text-xl hover:text-brandYellow transition-transform hover:scale-110" aria-label="Open cart">🛒</button>
+                <button class="md:hidden text-2xl" aria-label="Open mobile menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══ CONTENIDO ══ -->
+    <section class="py-20 px-4 bg-brandGrey flex-1">
+        <div class="max-w-4xl mx-auto space-y-6 text-gray-300 leading-relaxed text-lg">
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">About Us</h1>
+
+            <p>Bay Bee Store is a brand dedicated to offering unique and stylish products for those who want to stand out. Our mission is to provide quality, originality, and a reliable, friendly shopping experience.</p>
+
+            <p>While we operate under the trade name <em class="text-white">Bay Bee Store</em>, the legal entity behind our business is <strong class="text-white">ArsCore Industries Group LLC</strong>, registered in the United States. This ensures that we comply with all relevant legal and tax regulations to provide you with a secure and transparent service.</p>
+
+            <p>Thank you for being part of our community. We are here to support you and help you express your unique style.</p>
+
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="bg-brandDeepDark py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>© 2025 Bay Bee Store. All rights reserved.</p>
+                <nav class="mt-4 md:mt-0 flex space-x-8" aria-label="Legal links">
+                    <a class="hover:text-brandYellow transition-colors" href="privacy-policy.html">Privacy Policy</a>
+                    <a class="hover:text-brandYellow transition-colors" href="#">Terms of Service</a>
+                    <a class="hover:text-brandYellow transition-colors" href="#">Cookies</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
