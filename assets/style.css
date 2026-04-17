@@ -1,0 +1,383 @@
+﻿/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: #333;
+    color: #333;
+    text-align: center;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+    background: #ffd800;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+    .hero button {
+        background: #fff;
+        color: #0099ff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+/* ============================= */
+/* SLIDER CON IMAGENES */
+/* ============================= */
+
+.slider {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+    .slide.activo {
+        opacity: 1;
+    }
+
+    .slide h2 {
+        color: white;
+        font-size: 70px;
+        letter-spacing: 6px;
+        background: rgba(0,0,0,0.5);
+        padding: 15px 40px;
+        border-radius: 10px;
+    }
+
+/* Flechas */
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px 18px;
+    z-index: 10;
+}
+
+.izquierda {
+    left: 20px;
+}
+
+.derecha {
+    right: 20px;
+}
+
+.flecha:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* ========================= */
+/* SECCION PRODUCTOS */
+/* ========================= */
+
+.productos {
+    padding: 20px;
+    text-align: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+#productosDestacados {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* TARJETA PRODUCTO */
+.producto-card {
+    width: 400px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* EFECTO TARJETA */
+    .producto-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    }
+
+/* CONTENEDOR IMAGEN */
+.producto-img {
+    width: 350px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    padding: 10px
+}
+
+    /* IMAGEN */
+    .producto-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+/* ZOOM INTERNO */
+.producto-card:hover .producto-img img {
+    transform: scale(1.15);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ========================= */
+/* NEWSLETTER SECTION */
+/* ========================= */
+
+.newsletter {
+    background: #111;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    color: #bbb;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+    .newsletter-form input {
+        padding: 14px 20px;
+        width: 70%;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .newsletter-form button {
+        padding: 14px 25px;
+        border: none;
+        border-radius: 30px;
+        background: #ffd800;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .newsletter-form button:hover {
+            background: white;
+        }
+
+.mensaje-exito {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+    color: #ffd800;
+}
+
+    /* Agrega el check automáticamente */
+    .mensaje-exito.mostrar-exito::before {
+        content: "✔ ";
+        color: #4CAF50;
+        font-weight: bold;
+    }
+
+/* ========================= */
+/* FEATURE SECTION */
+/* ========================= */
+
+.feature-section {
+    padding: 80px 20px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.feature-container {
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+/* IMAGEN GRANDE */
+.feature-image {
+    flex: 1.2; /* más espacio para la imagen */
+}
+
+    .feature-image img {
+        width: 100%;
+        height: 500px; /* Altura ideal para tu imagen */
+        object-fit: cover; /* Mantiene proporción sin deformar */
+        border-radius: 10px;
+    }
+/* TEXTO A LA PAR */
+.feature-content {
+    flex: 1;
+    color: white;
+}
+
+    .feature-content h2 {
+        font-size: 60px; /* Mucho más grande */
+        font-weight: 800;
+        margin-bottom: 25px;
+        line-height: 1.1;
+    }
+
+    .feature-content p {
+        font-size: 20px;
+        color: #bbb;
+        margin-bottom: 35px;
+    }
+
+.feature-btn {
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    background: #ffd800;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+}
+
+    .feature-btn:hover {
+        background: white;
+    }
+
+/*Estilo param label pagina defs privacidad (privacy-policy)*/
+.policy-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+}
+
+    .policy-container h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .policy-container h2 {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+
+    .policy-container p {
+        margin-top: 10px;
+        line-height: 1.6;
+        color: #444;
+    }
+
+/*politca de privacidad*/
+.policy-container {
+    max-width: 750px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+    .policy-container h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .policy-container h2 {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    .policy-container a {
+        color: #0077cc;
+        text-decoration: underline;
+    }
