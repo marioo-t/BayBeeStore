@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -305,18 +305,18 @@
                 const card = document.createElement('article');
                 card.className = 'bg-brandDark rounded-3xl p-4 group cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-2';
                 card.innerHTML = `
-                                    <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-6">
-                                        <img
-                                            src="${prod.imagen}"
-                                            alt="${prod.nombre}"
-                                            loading="lazy"
-                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div class="absolute inset-0 bg-brandYellow/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                    </div>
-                                    <h4 class="text-xl font-bold mb-2 group-hover:text-brandYellow transition-colors">${prod.nombre}</h4>
-                                    <p class="text-gray-400 font-semibold">${prod.precio}</p>
-                                `;
+                                        <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-6">
+                                            <img
+                                                src="${prod.imagen}"
+                                                alt="${prod.nombre}"
+                                                loading="lazy"
+                                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                            <div class="absolute inset-0 bg-brandYellow/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        </div>
+                                        <h4 class="text-xl font-bold mb-2 group-hover:text-brandYellow transition-colors">${prod.nombre}</h4>
+                                        <p class="text-gray-400 font-semibold">${prod.precio}</p>
+                                    `;
                 contenedor.appendChild(card);
             });
         }
@@ -343,6 +343,5 @@
             });
         })();
     </script>
-    <script src="main.js"></script>
 </body>
 </html>

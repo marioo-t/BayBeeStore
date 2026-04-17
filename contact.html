@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Bay Bee Store</title>
+
+    <!-- 1. Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- 2. Configuración de colores personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandYellow:   '#ffd800',
+                        brandDark:     '#222',
+                        brandDeepDark: '#111',
+                        brandGrey:     '#333',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-brandGrey text-white font-sans overflow-x-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <header class="bg-brandDark sticky top-0 z-50 shadow-lg border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20" aria-label="Main navigation">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-brandYellow">
+                BAY BEE STORE
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider" role="list">
+                <li><a class="hover:text-brandYellow transition-colors" href="index.html">Home</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Style</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Coffee</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Wellness</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="#">Extras</a></li>
+                <li><a class="hover:text-brandYellow transition-colors" href="about-us.html">About Us</a></li>
+            </ul>
+            <div class="flex items-center space-x-5">
+                <button class="text-xl hover:text-brandYellow transition-transform hover:scale-110" aria-label="Open cart">🛒</button>
+                <button class="md:hidden text-2xl" aria-label="Open mobile menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══ CONTENIDO ══ -->
+    <section class="py-16 px-4 bg-brandGrey">
+        <div class="max-w-5xl mx-auto">
+
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-center">Get in Touch</h1>
+            <p class="text-gray-400 mb-12 text-center text-lg">We'd love to hear from you! Whether you have a question, feedback, or need assistance, we're here to help.</p>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- CONTACT FORM -->
+                <div class="bg-brandDark rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
+                    
+                    <form id="contactForm" novalidate class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Your Name *</label>
+                            <input
+                                id="name"
+                                type="text"
+                                required
+                                autocomplete="name"
+                                class="w-full px-4 py-3 rounded-lg bg-brandGrey border border-white/10 focus:border-brandYellow focus:ring-brandYellow text-white outline-none placeholder-gray-500"
+                                placeholder="John Doe"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address *</label>
+                            <input
+                                id="email"
+                                type="email"
+                                required
+                                autocomplete="email"
+                                class="w-full px-4 py-3 rounded-lg bg-brandGrey border border-white/10 focus:border-brandYellow focus:ring-brandYellow text-white outline-none placeholder-gray-500"
+                                placeholder="john@example.com"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">Subject *</label>
+                            <input
+                                id="subject"
+                                type="text"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-brandGrey border border-white/10 focus:border-brandYellow focus:ring-brandYellow text-white outline-none placeholder-gray-500"
+                                placeholder="How can we help you?"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Message *</label>
+                            <textarea
+                                id="message"
+                                rows="5"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-brandGrey border border-white/10 focus:border-brandYellow focus:ring-brandYellow text-white outline-none placeholder-gray-500 resize-none"
+                                placeholder="Tell us more about your inquiry..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full px-8 py-4 bg-brandYellow text-brandDeepDark font-bold rounded-lg hover:bg-white transition-colors"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+
+                    <p id="contactSuccess" class="text-brandYellow font-bold mt-5 opacity-0 transition-all duration-500 translate-y-2" aria-live="polite"></p>
+                </div>
+
+                <!-- CONTACT INFO -->
+                <div class="space-y-6">
+                    
+                    <!-- Email -->
+                    <div class="bg-brandDark rounded-2xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">✉️</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Email Us</h3>
+                                <p class="text-gray-400 text-sm mb-2">We typically respond within 24 hours</p>
+                                <a href="mailto:arscoreindustriesgroup@gmail.com" class="text-brandYellow hover:underline font-semibold">arscoreindustriesgroup@gmail.com</a>
+                                <br />
+                                <a href="mailto:bay.beeproducts@gmail.com" class="text-brandYellow hover:underline font-semibold">bay.beeproducts@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Support Hours -->
+                    <div class="bg-brandDark rounded-2xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">🕐</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Business Hours</h3>
+                                <p class="text-gray-400 text-sm">Monday to Friday, 9 AM – 11:30 PM CSTT</p>
+                                <p class="text-gray-400 text-sm">Saturday 9 AM to 12 PM</p>
+                                <p class="text-gray-400 text-sm">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-brandDark rounded-2xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">📱</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-white mb-3">Follow Us</h3>
+                                <div class="flex space-x-4">
+                                    <!-- Placeholder for Facebook logo -->
+                                    <a href="https://www.facebook.com/profile.php?id=61575093534363" class="w-10 h-10 bg-brandGrey rounded-full flex items-center justify-center hover:bg-brandYellow hover:text-brandDeepDark transition-colors" aria-label="Facebook">
+                                        <span class="text-xl">f</span>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-brandGrey rounded-full flex items-center justify-center hover:bg-brandYellow hover:text-brandDeepDark transition-colors" aria-label="Instagram">
+                                        <span class="text-xl">📷</span>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-brandGrey rounded-full flex items-center justify-center hover:bg-brandYellow hover:text-brandDeepDark transition-colors" aria-label="Twitter">
+                                        <span class="text-xl">🐦</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="bg-brandDark rounded-2xl p-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-3xl">🏢</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Company Information</h3>
+                                <p class="text-gray-400 text-sm">ArsCore Industries Group LLC</p>
+                                <p class="text-gray-400 text-sm">Doing business as Bay Bee Store</p>
+                                <p class="text-gray-400 text-sm mt-2">United States</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ SECTION -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    
+                    <div class="bg-brandDark rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">What are your shipping times?</h3>
+                        <p class="text-gray-400 text-sm">Orders are processed within 1-3 business days. Shipping times vary by location. Check our <a href="shipping-policy.html" class="text-brandYellow hover:underline">Shipping Policy</a> for details.</p>
+                    </div>
+
+                    <div class="bg-brandDark rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">How do I track my order?</h3>
+                        <p class="text-gray-400 text-sm">Once your order ships, you'll receive a tracking number via email. You can also track your order by logging into your account.</p>
+                    </div>
+
+                    <div class="bg-brandDark rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-white mb-2">What is your return policy?</h3>
+                        <p class="text-gray-400 text-sm">Items must be unused and in original packaging. See our <a href="refund-policy.html" class="text-brandYellow hover:underline">Refund Policy</a> for more information.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="bg-brandDeepDark py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>© 2025 Bay Bee Store. All rights reserved.</p>
+                <nav class="mt-4 md:mt-0 flex space-x-8" aria-label="Legal links">
+                    <a class="hover:text-brandYellow transition-colors" href="privacy-policy.html">Privacy Policy</a>
+                    <a class="hover:text-brandYellow transition-colors" href="terms-of-service.html">Terms of Service</a>
+                    <a class="hover:text-brandYellow transition-colors" href="refund-policy.html">Refund Policy</a>
+                    <a class="hover:text-brandYellow transition-colors" href="shipping-policy.html">Shipping Policy</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ JS formulario contacto ══ -->
+    <script>
+        (function () {
+            const form    = document.getElementById('contactForm');
+            const success = document.getElementById('contactSuccess');
+            const inputs  = form.querySelectorAll('input, textarea');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                // Validate all required fields
+                let isValid = true;
+                inputs.forEach(input => {
+                    if (!input.validity.valid) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) return;
+
+                success.textContent = '✔ Thank you for your message! We\'ll get back to you soon.';
+                success.classList.remove('opacity-0', 'translate-y-2');
+                success.classList.add('opacity-100', 'translate-y-0');
+                
+                // Reset form
+                form.reset();
+
+                setTimeout(() => {
+                    success.classList.add('opacity-0', 'translate-y-2');
+                    success.classList.remove('opacity-100', 'translate-y-0');
+                }, 5000);
+            });
+        })();
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
