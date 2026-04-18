@@ -1,0 +1,394 @@
+{
+  "categories": {
+    "style": {
+      "slug": "style",
+      "name": "Style Collection",
+      "description": "Discover apparel and accessories built for everyday comfort, clean design, and an easy premium feel.",
+      "heroBadges": [
+        "6 Products",
+        "Bay Bee Favorites"
+      ],
+      "ctaTitle": "Build the rest of the category from the same JSON",
+      "ctaText": "This category is already ready to render cards, filters, and sorting from the catalog file.",
+      "ctaLink": "../contact.html",
+      "ctaLabel": "Contact Us"
+    },
+    "coffee": {
+      "slug": "coffee",
+      "name": "Coffee Collection",
+      "description": "Coffee gear and daily brewing essentials can be loaded here from the same catalog structure.",
+      "heroBadges": [
+        "0 Products",
+        "JSON Ready"
+      ]
+    },
+    "wellness": {
+      "slug": "wellness",
+      "name": "Wellness Collection",
+      "description": "Wellness items can reuse the same engine, filters, and product-card layout with no extra HTML duplication.",
+      "heroBadges": [
+        "0 Products",
+        "JSON Ready"
+      ]
+    },
+    "extras": {
+      "slug": "extras",
+      "name": "Extras Collection",
+      "description": "Any extra collection can plug into the same JSON-driven category template later.",
+      "heroBadges": [
+        "0 Products",
+        "JSON Ready"
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "style-001",
+      "slug": "product-1",
+      "pagePath": "products/style/product-1.html",
+      "category": "style",
+      "subcategory": "hoodies",
+      "type": "apparel",
+      "name": "Unisex Zip Hoodie",
+      "badge": "Best Seller",
+      "price": 29.99,
+      "currency": "USD",
+      "shortDescription": "Soft cotton-blend zip hoodie with a clean everyday silhouette and easy layering fit.",
+      "description": "A comfortable everyday hoodie designed for casual wear, light layering, and a polished streetwear look. It keeps the visual style from your original template while moving all editable content into a single JSON source.",
+      "material": "Cotton / polyester blend",
+      "country": "Imported",
+      "care": "Machine wash cold, tumble dry low",
+      "sku": "BBS-STY-001",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#111111"
+        },
+        {
+          "name": "White",
+          "hex": "#f5f5f5"
+        },
+        {
+          "name": "Blue",
+          "hex": "#3b82f6"
+        },
+        {
+          "name": "Red",
+          "hex": "#ef4444"
+        }
+      ],
+      "images": [
+        "images/products/style/product-1-main.jpg",
+        "images/products/style/product-1-thumb1.jpg",
+        "images/products/style/product-1-thumb2.jpg",
+        "images/products/style/product-1-thumb3.jpg",
+        "images/products/style/product-1-thumb4.jpg"
+      ],
+      "sections": [
+        {
+          "type": "cards",
+          "title": "Why it works",
+          "items": [
+            {
+              "title": "Daily comfort",
+              "text": "Soft feel and relaxed shape for everyday wear."
+            },
+            {
+              "title": "Easy layering",
+              "text": "Works over tees and under jackets without feeling bulky."
+            },
+            {
+              "title": "Store-ready base",
+              "text": "This layout is already driven by JSON, so edits happen in one place."
+            }
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "What can vary from JSON",
+          "items": [
+            "Name, price, SKU, material and care instructions",
+            "Available sizes, colors and image galleries",
+            "Custom blocks by product type such as features, FAQs or ingredient/spec cards"
+          ]
+        },
+        {
+          "type": "faq",
+          "title": "Quick questions",
+          "items": [
+            {
+              "q": "Do I need to edit the HTML for content changes?",
+              "a": "No. For text, price, images, sizes, colors and extra blocks, you only edit the JSON."
+            },
+            {
+              "q": "Can this later connect to Shopify?",
+              "a": "Yes. The structure is already separated into data and presentation, which makes migration easier."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "style-002",
+      "slug": "product-2",
+      "pagePath": "products/style/product-2.html",
+      "category": "style",
+      "subcategory": "caps",
+      "type": "accessory",
+      "name": "Heritage Cap",
+      "badge": "New",
+      "price": 14.99,
+      "currency": "USD",
+      "shortDescription": "Classic adjustable cap with a clean front panel and easy everyday styling.",
+      "description": "A low-maintenance accessory page that now renders from the same JSON file as the rest of the catalog. Add or replace copy, variants, and cards without touching the structure.",
+      "material": "Cotton twill",
+      "country": "Imported",
+      "care": "Spot clean only",
+      "sku": "BBS-STY-002",
+      "sizes": [
+        "One Size"
+      ],
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#111111"
+        },
+        {
+          "name": "Sand",
+          "hex": "#d6c6a5"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1d4ed8"
+        }
+      ],
+      "images": [
+        "images/products/style/product-2-main.jpg",
+        "images/products/style/product-2-thumb1.jpg",
+        "images/products/style/product-2-thumb2.jpg",
+        "images/products/style/product-2-thumb3.jpg"
+      ],
+      "sections": [
+        {
+          "type": "richText",
+          "title": "Accessory-focused block",
+          "paragraphs": [
+            "This product uses the same detail template, but the content is different because the JSON drives the section data.",
+            "For accessories like caps, you can show fit notes, closure type, fabric info, or shipping notes instead of apparel-specific blocks."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "style-003",
+      "slug": "product-3",
+      "pagePath": "products/style/product-3.html",
+      "category": "style",
+      "subcategory": "tshirts",
+      "type": "apparel",
+      "name": "Graphic T-Shirt",
+      "badge": "Featured",
+      "price": 24.99,
+      "currency": "USD",
+      "shortDescription": "Premium tee with a relaxed fit and a front graphic meant for effortless daily wear.",
+      "description": "This page shows how another apparel product can share the same base HTML while still keeping its own price, description, variants, and custom blocks.",
+      "material": "100% cotton",
+      "country": "Imported",
+      "care": "Machine wash cold, inside out",
+      "sku": "BBS-STY-003",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f5f5f5"
+        },
+        {
+          "name": "Charcoal",
+          "hex": "#374151"
+        }
+      ],
+      "images": [
+        "images/products/style/product-3-main.jpg",
+        "images/products/style/product-3-thumb1.jpg",
+        "images/products/style/product-3-thumb2.jpg"
+      ],
+      "sections": [
+        {
+          "type": "cards",
+          "title": "T-shirt content example",
+          "items": [
+            {
+              "title": "Fit",
+              "text": "Relaxed cut built for casual styling."
+            },
+            {
+              "title": "Fabric",
+              "text": "Breathable cotton feel for all-day comfort."
+            },
+            {
+              "title": "Expansion",
+              "text": "You can later attach design story, print info, or care tips as extra cards."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "style-004",
+      "slug": "product-4",
+      "pagePath": "products/style/product-4.html",
+      "category": "style",
+      "subcategory": "footwear",
+      "type": "footwear",
+      "name": "Premium Sneakers",
+      "badge": "Popular",
+      "price": 44.99,
+      "currency": "USD",
+      "shortDescription": "Clean everyday sneakers with a sporty profile and versatile styling.",
+      "description": "Footwear can use the same global product engine while showing its own sizes, specs, and future feature blocks like sole details or fit recommendations.",
+      "material": "Synthetic upper",
+      "country": "Imported",
+      "care": "Wipe clean with a damp cloth",
+      "sku": "BBS-STY-004",
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f5f5f5"
+        },
+        {
+          "name": "Black",
+          "hex": "#111111"
+        }
+      ],
+      "images": [
+        "images/products/style/product-4-main.jpg",
+        "images/products/style/product-4-thumb1.jpg",
+        "images/products/style/product-4-thumb2.jpg"
+      ],
+      "sections": [
+        {
+          "type": "bullets",
+          "title": "Footwear fields ready for JSON",
+          "items": [
+            "Size runs and fit notes",
+            "Upper, lining and sole materials",
+            "Care and maintenance guidance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "style-005",
+      "slug": "product-5",
+      "pagePath": "products/style/product-5.html",
+      "category": "style",
+      "subcategory": "bags",
+      "type": "accessory",
+      "name": "Everyday Backpack",
+      "badge": "Utility",
+      "price": 39.99,
+      "currency": "USD",
+      "shortDescription": "Compact daily backpack with a streamlined shape and room for essentials.",
+      "description": "Another example of a product page generated by the same HTML and JSON combination. Good for bags, accessories, or mixed collections.",
+      "material": "Polyester shell",
+      "country": "Imported",
+      "care": "Spot clean with mild soap",
+      "sku": "BBS-STY-005",
+      "sizes": [],
+      "colors": [
+        {
+          "name": "Olive",
+          "hex": "#556b2f"
+        },
+        {
+          "name": "Black",
+          "hex": "#111111"
+        }
+      ],
+      "images": [
+        "images/products/style/product-5-main.jpg",
+        "images/products/style/product-5-thumb1.jpg",
+        "images/products/style/product-5-thumb2.jpg"
+      ],
+      "sections": [
+        {
+          "type": "richText",
+          "title": "Mixed product types also fit",
+          "paragraphs": [
+            "Bags and accessories do not need a different HTML file anymore.",
+            "You can decide their extra blocks in JSON depending on the type of product."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "style-006",
+      "slug": "product-6",
+      "pagePath": "products/style/product-6.html",
+      "category": "style",
+      "subcategory": "accessories",
+      "type": "accessory",
+      "name": "Statement Sunglasses",
+      "badge": "Editors' Pick",
+      "price": 19.99,
+      "currency": "USD",
+      "shortDescription": "Lightweight sunglasses with a simple shape designed to finish off casual looks.",
+      "description": "This sample keeps the same product shell and swaps in different details from the JSON. It is a good example for accessories that need fewer variant fields.",
+      "material": "Polycarbonate frame",
+      "country": "Imported",
+      "care": "Store in case when not in use",
+      "sku": "BBS-STY-006",
+      "sizes": [],
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#111111"
+        },
+        {
+          "name": "Amber",
+          "hex": "#b45309"
+        }
+      ],
+      "images": [
+        "images/products/style/product-6-main.jpg",
+        "images/products/style/product-6-thumb1.jpg",
+        "images/products/style/product-6-thumb2.jpg"
+      ],
+      "sections": [
+        {
+          "type": "faq",
+          "title": "Future section logic",
+          "items": [
+            {
+              "q": "Can each product type have different sections?",
+              "a": "Yes. A sunglasses product can show lens info, a hoodie can show fabric and fit, and a coffee item can show brew notes or instructions, all from JSON."
+            },
+            {
+              "q": "Do category pages need another system?",
+              "a": "No. The same JSON can feed cards, filters, sorting, counters, and links for category pages too."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
